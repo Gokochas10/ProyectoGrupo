@@ -35,13 +35,12 @@ public class mdiPrincipal extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         saveMenuItem = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
         editMenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel1.setText("AJPJ COMPANY");
@@ -85,8 +84,14 @@ public class mdiPrincipal extends javax.swing.JFrame {
         fileMenu.setMnemonic('f');
         fileMenu.setText("Aeropuerto");
 
+        openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aeropuerto.png"))); // NOI18N
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Aeropuerto Publico");
+        openMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                openMenuItemMouseClicked(evt);
+            }
+        });
         openMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openMenuItemActionPerformed(evt);
@@ -94,6 +99,7 @@ public class mdiPrincipal extends javax.swing.JFrame {
         });
         fileMenu.add(openMenuItem);
 
+        saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avion.png"))); // NOI18N
         saveMenuItem.setMnemonic('s');
         saveMenuItem.setText("Aeropuerto privado");
         saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -103,34 +109,37 @@ public class mdiPrincipal extends javax.swing.JFrame {
         });
         fileMenu.add(saveMenuItem);
 
-        jMenu1.setText("jMenu1");
-        fileMenu.add(jMenu1);
-
         menuBar.add(fileMenu);
 
         editMenu.setMnemonic('e');
         editMenu.setText("Visualizar");
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresa.png"))); // NOI18N
         jMenuItem2.setText("Empresas");
         editMenu.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresario.png"))); // NOI18N
         jMenuItem3.setText("Compañias");
         editMenu.add(jMenuItem3);
 
         menuBar.add(editMenu);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
+        jMenu2.setText("Consultar");
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boletos-de-avion.png"))); // NOI18N
+        jMenuItem1.setText("Vuelos");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseClicked(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
 
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avion (1).png"))); // NOI18N
+        jMenuItem4.setText("Compañias");
+        jMenu2.add(jMenuItem4);
 
-        menuBar.add(helpMenu);
+        menuBar.add(jMenu2);
 
         setJMenuBar(menuBar);
 
@@ -150,13 +159,21 @@ public class mdiPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveMenuItemActionPerformed
+
+    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+       
+    }//GEN-LAST:event_jMenuItem1MouseClicked
+
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_openMenuItemActionPerformed
 
-    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveMenuItemActionPerformed
+    private void openMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_openMenuItemMouseClicked
+
+    }//GEN-LAST:event_openMenuItemMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,22 +211,21 @@ public class mdiPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItem;
+    public static javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
