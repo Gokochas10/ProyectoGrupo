@@ -1,3 +1,9 @@
+
+
+
+
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/MDIApplication.java to edit this template
@@ -33,14 +39,14 @@ public class mdiPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
+        btnAPublico = new javax.swing.JMenuItem();
+        btnAPrivado = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        btnVuelos = new javax.swing.JMenuItem();
+        btnCompanias = new javax.swing.JMenuItem();
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel1.setText("AJPJ COMPANY");
@@ -76,7 +82,7 @@ public class mdiPrincipal extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 70, 580, 360));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 580, 360));
 
         desktopPane.add(jPanel1);
         jPanel1.setBounds(0, 0, 580, 430);
@@ -84,30 +90,30 @@ public class mdiPrincipal extends javax.swing.JFrame {
         fileMenu.setMnemonic('f');
         fileMenu.setText("Aeropuerto");
 
-        openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aeropuerto.png"))); // NOI18N
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Aeropuerto Publico");
-        openMenuItem.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAPublico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aeropuerto.png"))); // NOI18N
+        btnAPublico.setMnemonic('o');
+        btnAPublico.setText("Aeropuerto Publico");
+        btnAPublico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                openMenuItemMouseClicked(evt);
+                btnAPublicoMouseClicked(evt);
             }
         });
-        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        btnAPublico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemActionPerformed(evt);
+                btnAPublicoActionPerformed(evt);
             }
         });
-        fileMenu.add(openMenuItem);
+        fileMenu.add(btnAPublico);
 
-        saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avion.png"))); // NOI18N
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Aeropuerto privado");
-        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        btnAPrivado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avion.png"))); // NOI18N
+        btnAPrivado.setMnemonic('s');
+        btnAPrivado.setText("Aeropuerto privado");
+        btnAPrivado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveMenuItemActionPerformed(evt);
+                btnAPrivadoActionPerformed(evt);
             }
         });
-        fileMenu.add(saveMenuItem);
+        fileMenu.add(btnAPrivado);
 
         menuBar.add(fileMenu);
 
@@ -116,28 +122,50 @@ public class mdiPrincipal extends javax.swing.JFrame {
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresa.png"))); // NOI18N
         jMenuItem2.setText("Empresas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         editMenu.add(jMenuItem2);
 
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresario.png"))); // NOI18N
         jMenuItem3.setText("Compañias");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         editMenu.add(jMenuItem3);
 
         menuBar.add(editMenu);
 
         jMenu2.setText("Consultar");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boletos-de-avion.png"))); // NOI18N
-        jMenuItem1.setText("Vuelos");
-        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnVuelos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnVuelos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/boletos-de-avion.png"))); // NOI18N
+        btnVuelos.setText("Vuelos");
+        btnVuelos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuItem1MouseClicked(evt);
+                btnVuelosMouseClicked(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        btnVuelos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVuelosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnVuelos);
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/avion (1).png"))); // NOI18N
-        jMenuItem4.setText("Compañias");
-        jMenu2.add(jMenuItem4);
+        btnCompanias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnCompanias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresa.png"))); // NOI18N
+        btnCompanias.setText("Compañias");
+        btnCompanias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCompaniasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnCompanias);
 
         menuBar.add(jMenu2);
 
@@ -159,21 +187,42 @@ public class mdiPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+    private void btnAPrivadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAPrivadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_saveMenuItemActionPerformed
+    }//GEN-LAST:event_btnAPrivadoActionPerformed
 
-    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
-       
-    }//GEN-LAST:event_jMenuItem1MouseClicked
+    private void btnVuelosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVuelosMouseClicked
+mdiListaVuelos ven = new mdiListaVuelos();
+ven.setVisible(true);
+    }//GEN-LAST:event_btnVuelosMouseClicked
 
-    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+    private void btnAPublicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAPublicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_openMenuItemActionPerformed
+    }//GEN-LAST:event_btnAPublicoActionPerformed
 
-    private void openMenuItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_openMenuItemMouseClicked
+    private void btnAPublicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAPublicoMouseClicked
 
-    }//GEN-LAST:event_openMenuItemMouseClicked
+    }//GEN-LAST:event_btnAPublicoMouseClicked
+
+    private void btnVuelosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVuelosActionPerformed
+       mdiListaVuelos ven = new mdiListaVuelos();
+ven.setVisible(true);
+    }//GEN-LAST:event_btnVuelosActionPerformed
+
+    private void btnCompaniasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompaniasActionPerformed
+    mdiConsultas consulta = new mdiConsultas();
+     consulta.setVisible(true);
+    }//GEN-LAST:event_btnCompaniasActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        mdiEmpresas mdi = new mdiEmpresas();
+        mdi.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        mdiCompañias md= new mdiCompañias();
+        md.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,6 +260,10 @@ public class mdiPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btnAPrivado;
+    public static javax.swing.JMenuItem btnAPublico;
+    private javax.swing.JMenuItem btnCompanias;
+    private javax.swing.JMenuItem btnVuelos;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu fileMenu;
@@ -218,15 +271,11 @@ public class mdiPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JMenuBar menuBar;
-    public static javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }
